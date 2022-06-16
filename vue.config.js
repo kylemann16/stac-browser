@@ -13,6 +13,7 @@ const configFromFile = require(configFile);
 const mergedConfig = Object.assign(configFromFile, argv);
 
 module.exports = {
+    devServer: { disableHostCheck: true },
 	lintOnSave: process.env.NODE_ENV !== 'production',
 	publicPath: mergedConfig.pathPrefix,
 	chainWebpack: webpackConfig => {
